@@ -26,6 +26,7 @@ public class LoginPageTest extends TestBase
 	}
 	//testing of github
 	// Testing of github
+	//Testing
 	@BeforeMethod
 	public void setUp()
 	{
