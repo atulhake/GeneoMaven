@@ -44,7 +44,7 @@ public class TestBase
 		wd.manage().window().maximize();
 		wd.manage().deleteAllCookies();
 	    wd.get(prop.getProperty("url"));
-		wd.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+		//wd.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		wd.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		
 	}
