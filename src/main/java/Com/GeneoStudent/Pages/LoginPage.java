@@ -19,7 +19,10 @@ public class LoginPage
    By popup = By.xpath("//*[@id='alert-msg']");
    By coverpage_title = By.xpath("/html/head/title[contains(text(),'Geneo Student Cover Page')]");
    By LandingPage_title = By.xpath("/html/head/title[contains(text(),'Student Landing page')]");
-   
+   By ForgotPasswordHyperLink = By.className("login_forgot");
+   By ForgotPasswordWindow = By.id("txt_UserName");
+   By FP_SendButton = By.id("btn_SendFogotPassword");
+   By FP_Send_Click_PopUP = By.xpath("//*[@id='myModal_alertmessage']/div/div/div/h4");
  public LoginPage(WebDriver wd)
     {
 	    this.wd = wd;
@@ -58,9 +61,20 @@ public class LoginPage
       	return new HomePage(wd);
      }
      
- //  public void   
+  public String ValidateForgotPassword(String ss) throws Exception
+  {
+	  wd.findElement(ForgotPasswordHyperLink).click();
+	  wd.findElement(ForgotPasswordWindow).sendKeys(ss);
+	  wd.findElement(FP_SendButton).click();
+	  Thread.sleep(2000);
+	 WebElement FP = wd.findElement(FP_Send_Click_PopUP);
+	 
+	 String name = FP.getText();
+	// System.out.println(name);
+	 return name;
   }
-     
+  
+  }    
      
      
      

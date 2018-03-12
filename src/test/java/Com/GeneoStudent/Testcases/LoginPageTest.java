@@ -22,24 +22,26 @@ public class LoginPageTest extends TestBase
 	HomePage homepage;
 	public LoginPageTest()	
 	{
-		super();
+		super();  
 	}
-	//testing of github
-	// Testing of github
-	//Testing   
+	 
 	@BeforeMethod
 	public void setUp()
 	{
 		initialization();
 		loginpage = new LoginPage(wd);
 	}
+	
+	
 	//@Test(priority=1)
 	public void loginPageTitleTest()
 	{
 		String title =loginpage.validateLoginPageTitle();
 		Assert.assertEquals(title, "Geneo Student Login", "Login page title mismatched");
 	}
-	@Test(priority=2)
+	
+	
+	//@Test(priority=2)
 	public void LoginTest() throws Exception
 	{
 		homepage =  loginpage.LoginToGeneo(prop.getProperty("username"), prop.getProperty("password"));
@@ -47,7 +49,9 @@ public class LoginPageTest extends TestBase
 		String title = homepage.verifyHomePageTitle();
 		Assert.assertEquals(title, "Geneo Student Cover Page","does not match");
 	}
-	@Test(priority=3)
+	
+	
+	//@Test(priority=3)
 		public void Login_Correct_ID_Incorrect_Password_Test() throws Exception
 		{
 		
@@ -56,7 +60,9 @@ public class LoginPageTest extends TestBase
 			String aa= loginpage.validateLogin();
 	        Assert.assertEquals(aa, "Please enter valid Username and Password.","Pop up text does not match");
 		}
-	@Test(priority=4)
+		
+		
+	//@Test(priority=4)
 	public void Login_InCorrect_ID_Incorrect_Password_Test() throws Exception
 	{
 	
@@ -65,7 +71,9 @@ public class LoginPageTest extends TestBase
 		String aa= loginpage.validateLogin();
         Assert.assertEquals(aa, "Please enter valid Username and Password.","Pop up text does not match");
 	}
-	@Test(priority=5)    // take text from sanket for this pop up
+	
+	
+	//@Test(priority=5)    // take text from sanket for this pop up
 	public void Login_Blank_ID_Blank_Password_Test() throws Exception
 	{
 	
@@ -74,7 +82,9 @@ public class LoginPageTest extends TestBase
 		String aa= loginpage.validateLogin();
         Assert.assertEquals(aa, "Please enter Username and Password.","Pop up text does not match");
 	}
-	@Test(priority=6)    // take text from sanket
+	
+	
+	//@Test(priority=6)    // take text from sanket
 	public void Login_Blank_ID_Valid_Password_Test() throws Exception
 	{
 	
@@ -83,11 +93,27 @@ public class LoginPageTest extends TestBase
 		String aa= loginpage.validateLogin();
         Assert.assertEquals(aa, "Please enter valid Username and Password.","Pop up text does not match");
 	}
-	@Test(priority=7)
-	public void LoginNegativeTest() throws Exception
+	
+	
+	//@Test(priority=7)
+	public void Forgot_Password_Positive_test() throws Exception
 	{
-		Object atul[][] = TestUtil.getTestData("Sheet1");
-		String aa = (String) atul[1][1];
+		String FP = loginpage.ValidateForgotPassword(prop.getProperty("Registered_ID_For_FP"));
+		Assert.assertEquals(FP, "Password Resent", " Password sent pop up failed to display");
+	}
+	
+	
+	//@Test(priority=8)
+	public void Forgot_Password_Negative_test() throws Exception
+	{
+		String FP = loginpage.ValidateForgotPassword(prop.getProperty("Unregistered_ID_For_FP"));
+		Assert.assertEquals(FP, "Incorrect Details", " Password Incorrect Details pop up failed to display");
+	}
+	@Test(priority=8)
+	public void Forgot_Password_Blank_ID_test() throws Exception
+	{
+		String FP = loginpage.ValidateForgotPassword(prop.getProperty("Blank_ID_For_FP"));
+		Assert.assertEquals(FP, "Incorrect Details", " Password Incorrect Details pop up failed to display");
 	}
 	
 	@AfterMethod

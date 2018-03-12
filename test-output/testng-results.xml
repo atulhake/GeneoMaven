@@ -1,44 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="166045" started-at="2018-03-12T14:21:21Z" finished-at="2018-03-12T14:24:07Z">
+  <suite name="Parallel test suite" duration-ms="82335" started-at="2018-03-12T17:15:55Z" finished-at="2018-03-12T17:17:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="166045" started-at="2018-03-12T14:21:21Z" finished-at="2018-03-12T14:24:07Z">
+    <test name="Regression 1" duration-ms="82335" started-at="2018-03-12T17:15:55Z" finished-at="2018-03-12T17:17:17Z">
       <class name="Com.GeneoStudent.Testcases.LoginPageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Com.GeneoStudent.Testcases.LoginPageTest@57fffcd7]" name="setUp" is-config="true" duration-ms="74151" started-at="2018-03-12T19:51:21Z" finished-at="2018-03-12T19:52:35Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Com.GeneoStudent.Testcases.LoginPageTest@31ef45e3]" name="setUp" is-config="true" duration-ms="77441" started-at="2018-03-12T22:45:55Z" finished-at="2018-03-12T22:47:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="LoginTest()[pri:2, instance:Com.GeneoStudent.Testcases.LoginPageTest@57fffcd7]" name="LoginTest" duration-ms="10851" started-at="2018-03-12T19:52:35Z" finished-at="2018-03-12T19:52:46Z">
+        <test-method status="PASS" signature="Forgot_Password_Blank_ID_test()[pri:8, instance:Com.GeneoStudent.Testcases.LoginPageTest@31ef45e3]" name="Forgot_Password_Blank_ID_test" duration-ms="3758" started-at="2018-03-12T22:47:13Z" finished-at="2018-03-12T22:47:16Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginTest -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Com.GeneoStudent.Testcases.LoginPageTest@57fffcd7]" name="teardown" is-config="true" duration-ms="715" started-at="2018-03-12T19:52:46Z" finished-at="2018-03-12T19:52:47Z">
+        </test-method> <!-- Forgot_Password_Blank_ID_test -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Com.GeneoStudent.Testcases.LoginPageTest@31ef45e3]" name="teardown" is-config="true" duration-ms="1093" started-at="2018-03-12T22:47:16Z" finished-at="2018-03-12T22:47:17Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=LoginTest status=SUCCESS method=LoginPageTest.LoginTest()[pri:2, instance:Com.GeneoStudent.Testcases.LoginPageTest@57fffcd7] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Com.GeneoStudent.Testcases.LoginPageTest@57fffcd7]" name="setUp" is-config="true" duration-ms="73301" started-at="2018-03-12T19:52:47Z" finished-at="2018-03-12T19:54:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="Login_Correct_ID_Incorrect_Password_Test()[pri:3, instance:Com.GeneoStudent.Testcases.LoginPageTest@57fffcd7]" name="Login_Correct_ID_Incorrect_Password_Test" duration-ms="6199" started-at="2018-03-12T19:54:00Z" finished-at="2018-03-12T19:54:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login_Correct_ID_Incorrect_Password_Test -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Com.GeneoStudent.Testcases.LoginPageTest@57fffcd7]" name="teardown" is-config="true" duration-ms="800" started-at="2018-03-12T19:54:06Z" finished-at="2018-03-12T19:54:07Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Login_Correct_ID_Incorrect_Password_Test status=SUCCESS method=LoginPageTest.Login_Correct_ID_Incorrect_Password_Test()[pri:3, instance:Com.GeneoStudent.Testcases.LoginPageTest@57fffcd7] output={null}]]]>
+                <![CDATA[[TestResult name=Forgot_Password_Blank_ID_test status=SUCCESS method=LoginPageTest.Forgot_Password_Blank_ID_test()[pri:8, instance:Com.GeneoStudent.Testcases.LoginPageTest@31ef45e3] output={null}]]]>
               </value>
             </param>
           </params>
@@ -46,6 +27,6 @@
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- Com.GeneoStudent.Testcases.LoginPageTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Regression 1 -->
+  </suite> <!-- Parallel test suite -->
 </testng-results>
