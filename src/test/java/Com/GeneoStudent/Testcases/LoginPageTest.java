@@ -33,7 +33,7 @@ public class LoginPageTest extends TestBase
 	}
 	
 	
-	//@Test(priority=1)
+	@Test(priority=1)
 	public void loginPageTitleTest()
 	{
 		String title =loginpage.validateLoginPageTitle();
@@ -41,7 +41,7 @@ public class LoginPageTest extends TestBase
 	}
 	
 	
-	//@Test(priority=2)
+	@Test(priority=2)
 	public void LoginTest() throws Exception
 	{
 		homepage =  loginpage.LoginToGeneo(prop.getProperty("username"), prop.getProperty("password"));
@@ -51,7 +51,7 @@ public class LoginPageTest extends TestBase
 	}
 	
 	
-	//@Test(priority=3)
+	@Test(priority=3)
 		public void Login_Correct_ID_Incorrect_Password_Test() throws Exception
 		{
 		
@@ -62,7 +62,7 @@ public class LoginPageTest extends TestBase
 		}
 		
 		
-	//@Test(priority=4)
+	@Test(priority=4)
 	public void Login_InCorrect_ID_Incorrect_Password_Test() throws Exception
 	{
 	
@@ -73,7 +73,7 @@ public class LoginPageTest extends TestBase
 	}
 	
 	
-	//@Test(priority=5)    // take text from sanket for this pop up
+	@Test(priority=5)    // take text from sanket for this pop up
 	public void Login_Blank_ID_Blank_Password_Test() throws Exception
 	{
 	
@@ -84,7 +84,7 @@ public class LoginPageTest extends TestBase
 	}
 	
 	
-	//@Test(priority=6)    // take text from sanket
+	@Test(priority=6)    // take text from sanket
 	public void Login_Blank_ID_Valid_Password_Test() throws Exception
 	{
 	
@@ -95,7 +95,7 @@ public class LoginPageTest extends TestBase
 	}
 	
 	
-	//@Test(priority=7)
+	@Test(priority=7)
 	public void Forgot_Password_Positive_test() throws Exception
 	{
 		String FP = loginpage.ValidateForgotPassword(prop.getProperty("Registered_ID_For_FP"));
@@ -103,13 +103,13 @@ public class LoginPageTest extends TestBase
 	}
 	
 	
-	//@Test(priority=8)
+	@Test(priority=8)
 	public void Forgot_Password_Negative_test() throws Exception
 	{
 		String FP = loginpage.ValidateForgotPassword(prop.getProperty("Unregistered_ID_For_FP"));
 		Assert.assertEquals(FP, "Incorrect Details", " Password Incorrect Details pop up failed to display");
 	}
-	@Test(priority=8)
+	@Test(priority=9)
 	public void Forgot_Password_Blank_ID_test() throws Exception
 	{
 		String FP = loginpage.ValidateForgotPassword(prop.getProperty("Blank_ID_For_FP"));

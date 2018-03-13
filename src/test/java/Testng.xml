@@ -11,7 +11,11 @@
   
   <test name="Regression 1">
     <classes>
-      <class name="Com.GeneoStudent.Testcases.LoginPageTest"/>
+      <class name="Com.GeneoStudent.Testcases.LoginPageTest">
+      <!-- <methods>
+          <include name="Login_Correct_ID_Incorrect_Password_Test" />
+        </methods> -->
+      </class>
     </classes>
   </test>
 </suite>
