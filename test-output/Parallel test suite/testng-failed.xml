@@ -8,8 +8,8 @@
     <classes>
       <class name="Com.GeneoStudent.Testcases.LoginPageTest">
         <methods>
-          <include name="Show_Password_Test"/>
           <include name="teardown"/>
+          <include name="LoginTest"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- Com.GeneoStudent.Testcases.LoginPageTest -->

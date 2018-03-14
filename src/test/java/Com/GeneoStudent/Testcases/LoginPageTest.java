@@ -41,7 +41,7 @@ public class LoginPageTest extends TestBase
 	public void loginPageTitleTest()
 	{
 		String title =loginpage.validateLoginPageTitle();
-		Assert.assertEquals(title, "Geneo Student Login", "Login page title mismatched");
+		Assert.assertEquals(title, "Geneo Student Login", "Login page title Does not match");
 	}
 	
 	
@@ -52,6 +52,7 @@ public class LoginPageTest extends TestBase
 		Thread.sleep(2000);
 		String title = homepage.verifyHomePageTitle();
 		Assert.assertEquals(title, "Geneo Student Cover Page","does not match");
+		
 	}
 	
 	
