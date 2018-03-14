@@ -16,14 +16,14 @@ import org.testng.annotations.Test;
 import com.gargoylesoftware.htmlunit.WebConsole.Logger;
 
 import Com.GeneoStudent.Base.TestBase;
-import Com.GeneoStudent.Pages.HomePage;
+import Com.GeneoStudent.Pages.LandingPage;
 import Com.GeneoStudent.Pages.LoginPage;
 import Com.GeneoStudent.Util.TestUtil;
 
 public class LoginPageTest extends TestBase 
 {
 	LoginPage loginpage;
-	HomePage homepage;
+	LandingPage homepage;
 	public LoginPageTest()	
 	{
 		super();  
@@ -119,12 +119,11 @@ public class LoginPageTest extends TestBase
 		String FP = loginpage.ValidateForgotPassword(prop.getProperty("Blank_ID_For_FP"));
 		Assert.assertEquals(FP, "Incorrect Details", " Password Incorrect Details pop up failed to display");
 	}
-	@Test
+	@Test(priority = 10)
 	public void Show_Password_Test() throws Exception 
 	{
 		loginpage.ValidateShowPassword("Abcde");
 		Assert.assertTrue(true);
-		
 	}
 	
 	@AfterMethod

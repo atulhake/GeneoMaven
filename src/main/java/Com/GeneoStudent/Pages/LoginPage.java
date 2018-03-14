@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Sleeper;
 
-import Com.GeneoStudent.Pages.HomePage;
+import Com.GeneoStudent.Pages.LandingPage;
 import Com.GeneoStudent.Base.TestBase;
 
 public class LoginPage 
@@ -41,7 +41,7 @@ public class LoginPage
 		return PopupTitle;
      }
      
-     public  HomePage LoginToGeneo(String UId,String pass) throws InterruptedException
+     public  LandingPage LoginToGeneo(String UId,String pass) throws InterruptedException
      {
     wd.findElement(username).sendKeys(UId);
    	   wd.findElement(Password).sendKeys(pass);
@@ -60,7 +60,7 @@ public class LoginPage
 	  		   System.out.println("successful Logged in");
 	  	   }
    	  		} catch (Exception e){}
-      	return new HomePage(wd);
+      	return new LandingPage(wd);
      }
      
   public String ValidateForgotPassword(String ss) throws Exception
@@ -80,7 +80,6 @@ public class LoginPage
 	 {
 		 wd.findElement(Password).sendKeys(Pass);
 		 wd.findElement(Checkbox).click();
-		// Thread.sleep(5000);
 		 boolean After =wd.findElement(Password12).isEnabled();
 		return true;
 	 }

@@ -4,12 +4,12 @@ import org.openqa.selenium.WebDriver;
 
 import Com.GeneoStudent.Base.TestBase;
 
-public class HomePage extends TestBase
+public class LandingPage extends TestBase
 {
 	WebDriver wd;
 	
 	
-	public HomePage(WebDriver wd)
+	public LandingPage(WebDriver wd)
     {
 	    this.wd = wd;
     }
