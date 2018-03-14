@@ -1,7 +1,9 @@
 package Com.GeneoStudent.Testcases;
 import java.io.File;
 import java.io.IOException;
+
 import javax.naming.spi.DirStateFactory.Result;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -10,7 +12,9 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import com.gargoylesoftware.htmlunit.WebConsole.Logger;
+
 import Com.GeneoStudent.Base.TestBase;
 import Com.GeneoStudent.Pages.HomePage;
 import Com.GeneoStudent.Pages.LoginPage;
@@ -115,6 +119,13 @@ public class LoginPageTest extends TestBase
 		String FP = loginpage.ValidateForgotPassword(prop.getProperty("Blank_ID_For_FP"));
 		Assert.assertEquals(FP, "Incorrect Details", " Password Incorrect Details pop up failed to display");
 	}
+	@Test
+	public void Show_Password_Test() throws Exception 
+	{
+		loginpage.ValidateShowPassword("Abcde");
+		Assert.assertTrue(true);
+		
+	}
 	
 	@AfterMethod
 	public void teardown(ITestResult result)
@@ -122,7 +133,7 @@ public class LoginPageTest extends TestBase
 		TestUtil testutil = new TestUtil();
 		testutil.ScreenShotOfFailedMenthod(result);
 		
-	wd.quit();	
+	//wd.quit();	
 	}
 	
 	

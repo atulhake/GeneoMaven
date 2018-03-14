@@ -23,6 +23,8 @@ public class LoginPage
    By ForgotPasswordWindow = By.id("txt_UserName");
    By FP_SendButton = By.id("btn_SendFogotPassword");
    By FP_Send_Click_PopUP = By.xpath("//*[@id='myModal_alertmessage']/div/div/div/h4");
+   By Checkbox = By.xpath("/html/body/div[2]/div/div/form/div[3]/span/label");
+   By Password12 = By.xpath("//input[@id='login_input_Pwd'][@type='text']");
  public LoginPage(WebDriver wd)
     {
 	    this.wd = wd;
@@ -74,6 +76,15 @@ public class LoginPage
 	 return name;
   }
   
+  public Boolean ValidateShowPassword(String Pass) throws Exception 
+	 {
+		 wd.findElement(Password).sendKeys(Pass);
+		 wd.findElement(Checkbox).click();
+		// Thread.sleep(5000);
+		 boolean After =wd.findElement(Password12).isEnabled();
+		return true;
+	 }
+
   }    
      
      

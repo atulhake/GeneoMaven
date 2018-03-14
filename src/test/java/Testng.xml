@@ -1,20 +1,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Parallel test suite" parallel="methods" thread-count="2">
   
-  
   <listeners>
-
   <listener class-name="Com.GeneoStudent.ExtentReportListener.ExtentReporterNG" />
-  
   </listeners>
-  
   
   <test name="Regression 1">
     <classes>
       <class name="Com.GeneoStudent.Testcases.LoginPageTest">
-      <!-- <methods>
-          <include name="Login_Correct_ID_Incorrect_Password_Test" />
-        </methods> -->
+   <methods>
+          <include name="Show_Password_Test" />
+        </methods>
       </class>
     </classes>
   </test>
