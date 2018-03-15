@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="Com.GeneoStudent.Testcases.CoverPageTest">
+      <class name="Com.GeneoStudent.Testcases.Index_Page_Test">
         <methods>
+          <include name="Cover_Page_SignOut_PopUp_60_sec_AutoSignOut_Test2"/>
           <include name="setup"/>
-          <include name="Cover_Page_SignOut_Button_Test"/>
         </methods>
-      </class> <!-- Com.GeneoStudent.Testcases.CoverPageTest -->
+      </class> <!-- Com.GeneoStudent.Testcases.Index_Page_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

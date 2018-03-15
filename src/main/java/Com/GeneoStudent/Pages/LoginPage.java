@@ -3,10 +3,7 @@ package Com.GeneoStudent.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Sleeper;
-
 import Com.GeneoStudent.Pages.LandingPage;
-import Com.GeneoStudent.Base.TestBase;
 
 public class LoginPage 
   {

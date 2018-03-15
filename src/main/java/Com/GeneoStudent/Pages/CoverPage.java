@@ -9,14 +9,16 @@ public class CoverPage {
 	By CoverPageClick = By.xpath("//img[contains(@src,'cover.png')]");
 	By CoverPgResumebutton = By.xpath("//button[contains(text(),'RESUME')]");
 	By SignOutMenuButton = By.xpath("//img[contains(@src,'logout.png')]");
-	By SignoutPopUpButtton = By.xpath("//button[contains(text(),'Sign Out')]");
-	By SignoutpopUpcanceButton = By.xpath("//button[contains(text(),'Cancel')]");
+	By SignoutPopUpSignOutButtton = By.xpath("//button[contains(text(),'Sign Out')]");
+	By SignoutpopUpCanceButton = By.xpath("//button[contains(text(),'Cancel')][contains(@class,'button_createnote')]");
+	By MenuMyProfileButton =  By.xpath("//a[contains(text(),'My Profile')]");
+	By MenuButtonn =  By.xpath("//img[@class='landing_user']");
+	//By MenuMyProfileButton =  By.xpath("");
 	
 	public CoverPage(WebDriver wd)
     {
 	    this.wd = wd;
     }
-	
 	
 	public String ValidateIndexPageTitle()
 	{
@@ -29,18 +31,45 @@ public class CoverPage {
 		wd.findElement(CoverPgResumebutton).click();
 		return wd.getTitle();
 	}	
+	
 	public  LoginPage ValidateSignOutButton() throws Exception
 	{
 		wd.findElement(SignOutMenuButton).click();
 		Thread.sleep(2000);
-		wd.findElement(SignoutPopUpButtton).click();
+		wd.findElement(SignoutPopUpSignOutButtton).click();
 		return new LoginPage(wd);
 	}
-	public  LoginPage ValidateSignOutPopUpCancelButton() throws Exception
+	
+	public  String ValidateSignOutPopUpCancelButton() throws Exception
 	{
 		wd.findElement(SignOutMenuButton).click();
 		Thread.sleep(2000);
-		wd.findElement(SignoutPopUpButtton).click();
-		return new LoginPage(wd);
+		wd.findElement(SignoutpopUpCanceButton).click();
+		return wd.getTitle();
+	}
+	
+	public String Validate_Cover_Page_SignOut_PopUp_60_sec_AutoSignOut1() throws Exception
+	{
+		wd.findElement(SignOutMenuButton).click();
+		System.out.println("60 seconds counter time Started");
+		Thread.sleep(62000);
+		return wd.getTitle();
+	}
+	
+	public boolean Validate_Cover_Page_SignOut_PopUp_60_sec_AutoSignOut2() throws Exception
+	{
+		wd.findElement(SignOutMenuButton).click();
+		System.out.println("60 seconds counter time Started");
+		Thread.sleep(59000);
+		return wd.findElement(SignoutPopUpSignOutButtton).isEnabled();
+	}
+	
+	//public String Validate_Cover_Page_menu_My_profile_Button()
+	{
+		wd.findElement(MenuButtonn).click();
+		wd.findElement(MenuMyProfileButton).click();
+		
+		
+		
 	}
 }
