@@ -29,7 +29,7 @@ public class CoverPageTest extends TestBase
 	@Test(priority = 1)
 	public void Cover_Page_Click_Test()
 	{
-		String title = coverpage.ValidateIndexPageTitle();
+		String title = coverpage.Validate_Cover_Page_Click();
 		Assert.assertEquals(title, "Geneo Student Index","Cover page click is not working");
 	}
 	@Test(priority = 2)
@@ -67,5 +67,36 @@ public class CoverPageTest extends TestBase
 		Assert.assertEquals(title, true, "Signout pop up does not wait for 60 seconds");
 		System.out.println("Signout pop up displayed for 60 seconds");
 	}
+    @Test(priority = 7)
+   	public void Cover_Page_menu_My_profile_Button_Test() throws Exception
+   	{
+   		String title = coverpage.Validate_Cover_Page_menu_My_profile_Button();
+   		Assert.assertEquals(title, "Geneo Student Profile","After click on coverpage -> menu -> my profile expected My profile page does npot appeared");
+   		System.out.println("coverpage -> menu -> my profile button is working fine");
+   	}
+    @Test(priority = 8)
+   	public void Cover_Page_menu_Lock_Screen_Button_Test() throws Exception
+   	{
+   		String title = coverpage.ValidateCoverPageLockScreenButton();
+   		Assert.assertEquals(title, "Geneo Student Login","After click on coverpage -> menu -> Lock screen button expected Login page does npot appeared");
+   		System.out.println("coverpage -> menu -> Lock screen button is working fine");
+   	}
+//    @Test(priority=9)
+//    public void Cover_Page_Lock_Screen_Functionality_Test() throws Exception
+//   	{
+//   		String title = coverpage.ValidateCoverPageLockScreenFunctionality();
+//   		Assert.assertEquals(title, "Geneo Student Cover Page","After click on coverpage -> menu -> Lock screen-> again login with same account ->  expected Cover page does npot appeared");
+//   		System.out.println("coverpage -> menu -> Lock screen-> Again Login with same account :: Lock screen Functionality is working fine");
+//   	}
+    
+    @Test(priority = 10)
+   	public void Cover_Page_menu_Change_Password_Button_Test() throws Exception
+   	{
+   		Boolean title = coverpage.ValidateCoverPageChangePasswordButton();
+   		Assert.assertFalse(title,"Change Password window Failed to open");
+   		System.out.println("coverpage -> menu -> Change password button is working fine");
+   	}
+    
+    
     
 }

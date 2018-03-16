@@ -6,7 +6,13 @@
       <class name="Com.GeneoStudent.Testcases.Index_Page_Test">
         <methods>
           <include name="Cover_Page_SignOut_PopUp_60_sec_AutoSignOut_Test2"/>
+          <include name="Index_Page_menu_My_profile_Button_Test"/>
           <include name="setup"/>
+          <include name="Index_Page_Resume_Button_Test"/>
+          <include name="Index_Page_Chapter_Click_Test"/>
+          <include name="Index_Page_SignOut_Button_Test"/>
+          <include name="Index_Page_SignOut_PopUp_60_sec_AutoSignOut_Test1"/>
+          <include name="Index_Page_SignOut_PopUp_Cancel_Button_Test1"/>
         </methods>
       </class> <!-- Com.GeneoStudent.Testcases.Index_Page_Test -->
     </classes>

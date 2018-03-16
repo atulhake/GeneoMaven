@@ -1,5 +1,13 @@
 package Com.GeneoStudent.Pages;
 
-public class TextPage {
+import org.openqa.selenium.By;
 
+public class TextPage 
+{
+	By LockscreenButton = By.xpath("//a[contains(text(),'Lock Screen')]");
+	
+	
+	
+	
+	
 }

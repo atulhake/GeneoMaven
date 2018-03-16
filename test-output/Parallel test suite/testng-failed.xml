@@ -6,13 +6,12 @@
   </listeners>
   <test name="Regression 1(failed)" parallel="methods">
     <classes>
-      <class name="Com.GeneoStudent.Testcases.LoginPageTest">
+      <class name="Com.GeneoStudent.Testcases.CoverPageTest">
         <methods>
-          <include name="teardown"/>
-          <include name="LoginTest"/>
-          <include name="setUp"/>
+          <include name="setup"/>
+          <include name="Cover_Page_menu_Change_Password_Button_Test"/>
         </methods>
-      </class> <!-- Com.GeneoStudent.Testcases.LoginPageTest -->
+      </class> <!-- Com.GeneoStudent.Testcases.CoverPageTest -->
     </classes>
   </test> <!-- Regression 1(failed) -->
 </suite> <!-- Failed suite [Parallel test suite] -->

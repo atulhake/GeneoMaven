@@ -1,5 +1,9 @@
 package Com.GeneoStudent.Pages;
 
-public class SignUpPage {
+import org.openqa.selenium.By;
 
+public class SignUpPage 
+{
+	By LockscreenButton = By.xpath("//a[contains(text(),'Lock Screen')]");
+	
 }

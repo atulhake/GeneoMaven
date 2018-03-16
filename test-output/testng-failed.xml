@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Parallel test suite]" parallel="methods">
+  <listeners>
+    <listener class-name="Com.GeneoStudent.ExtentReportListener.ExtentReporterNG"/>
+  </listeners>
+  <test name="Regression 1(failed)" parallel="methods">
     <classes>
-      <class name="Com.GeneoStudent.Testcases.Index_Page_Test">
+      <class name="Com.GeneoStudent.Testcases.CoverPageTest">
         <methods>
-          <include name="Cover_Page_SignOut_PopUp_60_sec_AutoSignOut_Test2"/>
           <include name="setup"/>
+          <include name="Cover_Page_menu_Change_Password_Button_Test"/>
         </methods>
-      </class> <!-- Com.GeneoStudent.Testcases.Index_Page_Test -->
+      </class> <!-- Com.GeneoStudent.Testcases.CoverPageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Regression 1(failed) -->
+</suite> <!-- Failed suite [Parallel test suite] -->

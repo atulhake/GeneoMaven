@@ -54,6 +54,7 @@ public class TestBase
    	
     public void select_std_sub(int std,String subject) throws InterruptedException
     {
+    	Thread.sleep(3000);
 		 if(wd.getTitle().equals("Geneo Student Cover Page"))
 			{
 				wd.findElement(By.xpath(".//img[@class='landing_user']")).click();   // menu option

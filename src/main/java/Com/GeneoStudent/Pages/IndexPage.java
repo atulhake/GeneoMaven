@@ -11,7 +11,9 @@ public class IndexPage {
 	By SignOutMenuButton = By.xpath("//img[contains(@src,'logout.png')]");
 	By SignoutPopUpSignOutButtton = By.xpath("//button[contains(text(),'Sign Out')]");
 	By SignoutpopUpCanceButton = By.xpath("//button[contains(text(),'Cancel')][contains(@class,'button_createnote')]");
-	
+	By MenuMyProfileButton =  By.xpath("//a[contains(text(),'My Profile')]");
+	By MenuButtonn =  By.xpath("//img[@class='landing_user']");
+	By LockscreenButton = By.xpath("//a[contains(text(),'Lock Screen')]");
 
 	public IndexPage(WebDriver wd)
     {
@@ -59,7 +61,22 @@ public class IndexPage {
 		return wd.findElement(SignoutPopUpSignOutButtton).isEnabled();
 		
 	}
+	public String Validate_index_Page_menu_My_profile_Button()
+	{
+		wd.findElement(MenuButtonn).click();
+		wd.findElement(MenuMyProfileButton).click();
+		return wd.getTitle();
+	}
 	
+	public String ValidateIndexPageLockScreenButton() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(MenuButtonn).click();
+		System.out.println("menu button got clicked");
+		wd.findElement(LockscreenButton).click();
+		Thread.sleep(2000);
+		return wd.getTitle();
+	}
 	
 	
 	
