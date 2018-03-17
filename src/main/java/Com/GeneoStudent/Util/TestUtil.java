@@ -92,15 +92,14 @@ public void getscreenshots(WebDriver wd ,String name)
 			TakesScreenshot ts = (TakesScreenshot)wd;
 			File source =ts.getScreenshotAs(OutputType.FILE);
 		    FileUtils.copyFile(source, new File("./screenshots_geneo/"+result.getName()+System.currentTimeMillis()+".png"));
-			
-		}
+		   }
+		
 		catch(Exception e)
 		{
 			System.out.println(e);
 		}
-	
-		
-	}	}
+	}	
+}
 
 
 

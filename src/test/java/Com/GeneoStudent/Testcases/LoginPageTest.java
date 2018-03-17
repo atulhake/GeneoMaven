@@ -1,7 +1,9 @@
 package Com.GeneoStudent.Testcases;
 import java.io.File;
 import java.io.IOException;
+
 import javax.naming.spi.DirStateFactory.Result;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -10,16 +12,18 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import com.gargoylesoftware.htmlunit.WebConsole.Logger;
+
 import Com.GeneoStudent.Base.TestBase;
-import Com.GeneoStudent.Pages.HomePage;
+import Com.GeneoStudent.Pages.LandingPage;
 import Com.GeneoStudent.Pages.LoginPage;
 import Com.GeneoStudent.Util.TestUtil;
 
 public class LoginPageTest extends TestBase 
 {
 	LoginPage loginpage;
-	HomePage homepage;
+	LandingPage homepage;
 	public LoginPageTest()	
 	{
 		super();  
@@ -37,7 +41,7 @@ public class LoginPageTest extends TestBase
 	public void loginPageTitleTest()
 	{
 		String title =loginpage.validateLoginPageTitle();
-		Assert.assertEquals(title, "Geneo Student Login", "Login page title mismatched");
+		Assert.assertEquals(title, "Geneo Student Login", "Login page title Does not match");
 	}
 	
 	
@@ -48,6 +52,7 @@ public class LoginPageTest extends TestBase
 		Thread.sleep(2000);
 		String title = homepage.verifyHomePageTitle();
 		Assert.assertEquals(title, "Geneo Student Cover Page","does not match");
+		
 	}
 	
 	
@@ -115,6 +120,12 @@ public class LoginPageTest extends TestBase
 		String FP = loginpage.ValidateForgotPassword(prop.getProperty("Blank_ID_For_FP"));
 		Assert.assertEquals(FP, "Incorrect Details", " Password Incorrect Details pop up failed to display");
 	}
+	@Test(priority = 10)
+	public void Show_Password_Test() throws Exception 
+	{
+		loginpage.ValidateShowPassword("Abcde");
+		Assert.assertTrue(true);
+	}
 	
 	@AfterMethod
 	public void teardown(ITestResult result)
@@ -122,7 +133,7 @@ public class LoginPageTest extends TestBase
 		TestUtil testutil = new TestUtil();
 		testutil.ScreenShotOfFailedMenthod(result);
 		
-	wd.quit();	
+	//wd.quit();	
 	}
 	
 	

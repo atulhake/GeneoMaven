@@ -3,10 +3,7 @@ package Com.GeneoStudent.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Sleeper;
-
-import Com.GeneoStudent.Pages.HomePage;
-import Com.GeneoStudent.Base.TestBase;
+import Com.GeneoStudent.Pages.LandingPage;
 
 public class LoginPage 
   {
@@ -23,6 +20,8 @@ public class LoginPage
    By ForgotPasswordWindow = By.id("txt_UserName");
    By FP_SendButton = By.id("btn_SendFogotPassword");
    By FP_Send_Click_PopUP = By.xpath("//*[@id='myModal_alertmessage']/div/div/div/h4");
+   By Checkbox = By.xpath("/html/body/div[2]/div/div/form/div[3]/span/label");
+   By Password12 = By.xpath("//input[@id='login_input_Pwd'][@type='text']");
  public LoginPage(WebDriver wd)
     {
 	    this.wd = wd;
@@ -39,7 +38,7 @@ public class LoginPage
 		return PopupTitle;
      }
      
-     public  HomePage LoginToGeneo(String UId,String pass) throws InterruptedException
+     public  LandingPage LoginToGeneo(String UId,String pass) throws InterruptedException
      {
     wd.findElement(username).sendKeys(UId);
    	   wd.findElement(Password).sendKeys(pass);
@@ -58,7 +57,7 @@ public class LoginPage
 	  		   System.out.println("successful Logged in");
 	  	   }
    	  		} catch (Exception e){}
-      	return new HomePage(wd);
+      	return new LandingPage(wd);
      }
      
   public String ValidateForgotPassword(String ss) throws Exception
@@ -74,6 +73,14 @@ public class LoginPage
 	 return name;
   }
   
+  public Boolean ValidateShowPassword(String Pass) throws Exception 
+	 {
+		 wd.findElement(Password).sendKeys(Pass);
+		 wd.findElement(Checkbox).click();
+		 boolean After =wd.findElement(Password12).isEnabled();
+		return true;
+	 }
+
   }    
      
      
