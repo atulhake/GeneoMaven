@@ -3,11 +3,8 @@
   
   
   <listeners>
-
   <listener class-name="Com.GeneoStudent.ExtentReportListener.ExtentReporterNG" />
-  
   </listeners>
-  
   
   <test name="Regression 1">
     <classes>
