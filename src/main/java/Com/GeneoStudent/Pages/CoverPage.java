@@ -3,6 +3,8 @@ package Com.GeneoStudent.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.gargoylesoftware.htmlunit.javascript.host.Screen;
+
 import Com.GeneoStudent.Base.TestBase;
 
 public class CoverPage extends TestBase{
@@ -18,8 +20,21 @@ public class CoverPage extends TestBase{
 	By MenuMyProfileButton =  By.xpath("//a[contains(text(),'My Profile')]");
 	By MenuButtonn =  By.xpath("//img[@class='landing_user']");
 	By LockscreenButton = By.xpath("//a[contains(text(),'Lock Screen')]"); 
-	By Changepasswordbutton = By.xpath("//a[contains(text(),'Change Password')]"); //*[@id="user_current_pwd"]
+	By Changepasswordbutton = By.xpath("//a[contains(text(),'Change Password')]"); 
 	By user_current_pwd = By.xpath("//*[@id='user_current_pwd']");
+	By MenuGeneoButton = By.xpath("//a[contains(text(),'Geneo')]");
+	By LeftNevigationButton = By.xpath("//img[contains(@src,'previous.png')]");
+	By RightNevigationButton = By.xpath("//img[contains(@src,'next.png')]"); 
+	By HelpButton = By.xpath("//img[contains(@src,'Help_btn.png')]");
+	By HelpWindowCloseButton = By.xpath("//button[contains(@class,'close_corosal')]");
+	By HelpWindowLeftClickButton = By.xpath("//span[contains(@class,'glyphicon-chevron-left')]");	
+	By HelpWindowRightClickButton = By.xpath("//span[contains(@class,'glyphicon-chevron-right')]");
+	
+	
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+	
+	
+	
 	public CoverPage(WebDriver wd)
     {
 	    this.wd = wd;
@@ -110,8 +125,67 @@ public class CoverPage extends TestBase{
 		Thread.sleep(2000);
 		boolean tt = wd.findElement(user_current_pwd).isEnabled();
 		return tt;
-		
 	}
+	public String ValidateCoverPageMenuGeneoButton() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(MenuButtonn).click();
+		System.out.println("menu button got clicked");
+		wd.findElement(MenuGeneoButton).click();
+		Thread.sleep(2000);
+		return wd.getTitle();
+	}
+	public String ValidateCoverPagePreviousPageButton() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(LeftNevigationButton).click();
+		return wd.getTitle();
+	}
+	public String ValidateCoverPageNextPageButton() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(RightNevigationButton).click();
+		return wd.getTitle();
+	}
+	public Boolean ValidateCoverPageHelpButton() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(HelpButton).click();
+		System.out.println("Help button got clicked");
+		return wd.findElement(HelpWindowCloseButton).isEnabled();
+	}
+	public Boolean ValidateCoverPageWCloseButton() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(HelpButton).click();
+		System.out.println("Help button got clicked");
+		Thread.sleep(2000);
+		wd.findElement(HelpWindowCloseButton).click();
+		//Thread.sleep(500);
+		return wd.findElement(HelpWindowCloseButton).isEnabled();
+
+	}
+//	//public Boolean ValidateCoverPageWLeftClickButton() throws Exception
+//	{
+//		Thread.sleep(2000);
+//		wd.findElement(HelpButton).click();
+//		System.out.println("Help button got clicked");
+//		wd.findElement(HelpWindowLeftClickButton).click();
+//		
+//	}
+//	//public Boolean ValidateCoverPageWRightClickButton() throws Exception
+//	{
+//		Thread.sleep(2000);
+//		wd.findElement(HelpButton).click();
+//		System.out.println("Help button got clicked");
+//		wd.findElement(HelpWindowRightClickButton).click();
+//		
+//	}
+	
+	
+	
+	
+	
 	
 	
 	

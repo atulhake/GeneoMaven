@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Parallel_test_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="Com.GeneoStudent.Testcases.CoverPageTest" hash-for-method="Cover_Page_menu_Change_Password_Button_Test">Cover_Page_menu_Change_Password_Button_Test</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="Com.GeneoStudent.Testcases.CoverPageTest" hash-for-method="Cover_Page_Help_W_Close_Button_Test">Cover_Page_Help_W_Close_Button_Test</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Parallel_test_suite -->
@@ -125,11 +125,11 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Cover_Page_menu_Change_Password_Button_Test">
-                  </a> <!-- Cover_Page_menu_Change_Password_Button_Test -->
-                  <span class="method-name">Cover_Page_menu_Change_Password_Button_Test</span>
-                  <div class="stack-trace">java.lang.AssertionError: Change Password window Failed to open expected [false] but found [true]
-	at Com.GeneoStudent.Testcases.CoverPageTest.Cover_Page_menu_Change_Password_Button_Test(CoverPageTest.java:96)
+                  <a name="Cover_Page_Help_W_Close_Button_Test">
+                  </a> <!-- Cover_Page_Help_W_Close_Button_Test -->
+                  <span class="method-name">Cover_Page_Help_W_Close_Button_Test</span>
+                  <div class="stack-trace">java.lang.AssertionError: Cover page help Window Close button is not working. expected [false] but found [true]
+	at Com.GeneoStudent.Testcases.CoverPageTest.Cover_Page_Help_W_Close_Button_Test(CoverPageTest.java:134)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
@@ -156,7 +156,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;Com.GeneoStudent.Testcases.CoverPageTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;Cover_Page_menu_Change_Password_Button_Test&quot;/&gt;
+          &lt;include name=&quot;Cover_Page_Help_W_Close_Button_Test&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- Com.GeneoStudent.Testcases.CoverPageTest --&gt;
     &lt;/classes&gt;
@@ -200,14 +200,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Cover_Page_menu_Change_Password_Button_Test')
+data.setCell(0, 1, 'Cover_Page_Help_W_Close_Button_Test')
 data.setCell(0, 2, 'Com.GeneoStudent.Testcases.CoverPageTest')
-data.setCell(0, 3, 4206);
+data.setCell(0, 3, 5013);
 window.suiteTableData['Parallel_test_suite']= { tableData: data, tableDiv: 'times-div-Parallel_test_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-Parallel_test_suite">
               </div> <!-- times-div-Parallel_test_suite -->
             </div> <!-- times-div -->
@@ -222,23 +222,33 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Parallel_test_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">8 ignored methods</span>
+            <span class="header-content">13 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">Com.GeneoStudent.Testcases.CoverPageTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">Cover_Page_Resume_Button_Test</span>
-                <br/>
-                <span class="ignored-method-name">Cover_Page_SignOut_PopUp_Cancel_Button_Test</span>
+                <span class="ignored-method-name">Cover_Page_Help_Button_Test</span>
                 <br/>
                 <span class="ignored-method-name">Cover_Page_menu_My_profile_Button_Test</span>
                 <br/>
                 <span class="ignored-method-name">Cover_Page_SignOut_PopUp_60_sec_AutoSignOut_Test1</span>
                 <br/>
-                <span class="ignored-method-name">Cover_Page_Click_Test</span>
+                <span class="ignored-method-name">Cover_Page_menu_Geneo_Button_Test</span>
                 <br/>
                 <span class="ignored-method-name">Cover_Page_SignOut_PopUp_60_sec_AutoSignOut_Test2</span>
+                <br/>
+                <span class="ignored-method-name">Cover_Page_Next_Page_Button_Test</span>
+                <br/>
+                <span class="ignored-method-name">Cover_Page_Resume_Button_Test</span>
+                <br/>
+                <span class="ignored-method-name">Cover_Page_Previous_Page_Button_Test</span>
+                <br/>
+                <span class="ignored-method-name">Cover_Page_SignOut_PopUp_Cancel_Button_Test</span>
+                <br/>
+                <span class="ignored-method-name">Cover_Page_menu_Change_Password_Button_Test</span>
+                <br/>
+                <span class="ignored-method-name">Cover_Page_Click_Test</span>
                 <br/>
                 <span class="ignored-method-name">Cover_Page_menu_Lock_Screen_Button_Test</span>
                 <br/>
@@ -262,9 +272,13 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">Cover_Page_menu_Change_Password_Button_Test</span>
-                <span class="method-start">18179 ms</span>
+                <span class="method-name">Cover_Page_Help_W_Close_Button_Test</span>
+                <span class="method-start">122287 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown([TestResult name=Cover_Page_Help_W_Close_Button_Test status=FAILURE method=CoverPageTest.Cover_Page_...)</span>
+                <span class="method-start">127360 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

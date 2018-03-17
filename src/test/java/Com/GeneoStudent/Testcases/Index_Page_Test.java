@@ -5,12 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import Com.GeneoStudent.Base.TestBase;
 import Com.GeneoStudent.Pages.IndexPage;
 import Com.GeneoStudent.Pages.LoginPage;
+import Com.GeneoStudent.Util.TestUtil;
 
 
 public class Index_Page_Test extends TestBase
@@ -97,4 +100,12 @@ public class Index_Page_Test extends TestBase
 		   		Assert.assertEquals(title, "Geneo Student Login","After click on IndexPage -> menu -> Lock screen button, expected Login page does npot appeared");
 		   		System.out.println("IndexPage -> menu -> Lock screen button is working fine");
 		   	}
+		 
+		 @AfterMethod
+			public void teardown(ITestResult result)
+			{
+				TestUtil testutil = new TestUtil();
+				testutil.ScreenShotOfFailedMenthod(result);
+			wd.quit();	
+			}
 }

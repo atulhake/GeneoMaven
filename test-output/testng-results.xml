@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="8" total="9" passed="0">
+<testng-results skipped="0" failed="1" ignored="13" total="14" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Parallel test suite" duration-ms="22412" started-at="2018-03-16T12:19:51Z" finished-at="2018-03-16T12:20:13Z">
+  <suite name="Parallel test suite" duration-ms="128844" started-at="2018-03-17T12:22:35Z" finished-at="2018-03-17T12:24:44Z">
     <groups>
     </groups>
-    <test name="Regression 1" duration-ms="22412" started-at="2018-03-16T12:19:51Z" finished-at="2018-03-16T12:20:13Z">
+    <test name="Regression 1" duration-ms="128844" started-at="2018-03-17T12:22:35Z" finished-at="2018-03-17T12:24:44Z">
       <class name="Com.GeneoStudent.Testcases.CoverPageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:Com.GeneoStudent.Testcases.CoverPageTest@5f341870]" name="setup" is-config="true" duration-ms="18179" started-at="2018-03-16T17:49:51Z" finished-at="2018-03-16T17:50:09Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Com.GeneoStudent.Testcases.CoverPageTest@553f17c]" name="setup" is-config="true" duration-ms="122287" started-at="2018-03-17T17:52:35Z" finished-at="2018-03-17T17:54:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="Cover_Page_menu_Change_Password_Button_Test()[pri:10, instance:Com.GeneoStudent.Testcases.CoverPageTest@5f341870]" name="Cover_Page_menu_Change_Password_Button_Test" duration-ms="4206" started-at="2018-03-16T17:50:09Z" finished-at="2018-03-16T17:50:13Z">
+        <test-method status="FAIL" signature="Cover_Page_Help_W_Close_Button_Test()[pri:15, instance:Com.GeneoStudent.Testcases.CoverPageTest@553f17c]" name="Cover_Page_Help_W_Close_Button_Test" duration-ms="5013" started-at="2018-03-17T17:54:37Z" finished-at="2018-03-17T17:54:42Z">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Change Password window Failed to open expected [false] but found [true]]]>
+              <![CDATA[Cover page help Window Close button is not working. expected [false] but found [true]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Change Password window Failed to open expected [false] but found [true]
+              <![CDATA[java.lang.AssertionError: Cover page help Window Close button is not working. expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:93)
 	at org.testng.Assert.failNotEquals(Assert.java:512)
 	at org.testng.Assert.assertFalse(Assert.java:62)
-	at Com.GeneoStudent.Testcases.CoverPageTest.Cover_Page_menu_Change_Password_Button_Test(CoverPageTest.java:96)
+	at Com.GeneoStudent.Testcases.CoverPageTest.Cover_Page_Help_W_Close_Button_Test(CoverPageTest.java:134)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -40,7 +40,18 @@
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Cover_Page_menu_Change_Password_Button_Test -->
+        </test-method> <!-- Cover_Page_Help_W_Close_Button_Test -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:Com.GeneoStudent.Testcases.CoverPageTest@553f17c]" name="teardown" is-config="true" duration-ms="1439" started-at="2018-03-17T17:54:42Z" finished-at="2018-03-17T17:54:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Cover_Page_Help_W_Close_Button_Test status=FAILURE method=CoverPageTest.Cover_Page_Help_W_Close_Button_Test()[pri:15, instance:Com.GeneoStudent.Testcases.CoverPageTest@553f17c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
       </class> <!-- Com.GeneoStudent.Testcases.CoverPageTest -->
     </test> <!-- Regression 1 -->
   </suite> <!-- Parallel test suite -->

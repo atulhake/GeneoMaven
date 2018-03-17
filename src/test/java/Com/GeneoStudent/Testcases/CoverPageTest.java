@@ -1,11 +1,14 @@
 package Com.GeneoStudent.Testcases;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import Com.GeneoStudent.Base.TestBase;
 import Com.GeneoStudent.Pages.CoverPage;
 import Com.GeneoStudent.Pages.LoginPage;
+import Com.GeneoStudent.Util.TestUtil;
 
 public class CoverPageTest extends TestBase
      {
@@ -93,10 +96,49 @@ public class CoverPageTest extends TestBase
    	public void Cover_Page_menu_Change_Password_Button_Test() throws Exception
    	{
    		Boolean title = coverpage.ValidateCoverPageChangePasswordButton();
-   		Assert.assertFalse(title,"Change Password window Failed to open");
+   		Assert.assertTrue(title,"Change Password window Failed to open");
    		System.out.println("coverpage -> menu -> Change password button is working fine");
    	}
-    
-    
-    
+    @Test(priority = 11)
+   	public void Cover_Page_menu_Geneo_Button_Test() throws Exception
+   	{
+   		String title = coverpage.ValidateCoverPageMenuGeneoButton();
+   		Assert.assertEquals(title, "Student Landing page","Cover page menu -> Geneo button is not working");
+   		System.out.println("coverpage -> menu -> Geneo button is working fine");
+   	}
+    @Test(priority = 12)
+   	public void Cover_Page_Previous_Page_Button_Test() throws Exception
+   	{
+   		String title = coverpage.ValidateCoverPagePreviousPageButton();
+   		Assert.assertEquals(title, "Student Landing page","Cover page Prious Page button is not working");
+   		System.out.println("Cover page Prious Page button is working fine");
+   	}
+    @Test(priority = 13)
+   	public void Cover_Page_Next_Page_Button_Test() throws Exception
+   	{
+   		String title = coverpage.ValidateCoverPageNextPageButton();
+   		Assert.assertEquals(title, "Geneo Student Index","Cover page Next Page button is not working.");
+   		System.out.println("Cover page Next Page button is working fine");
+   	}
+    @Test(priority = 14)
+   	public void Cover_Page_Help_Button_Test() throws Exception
+   	{
+   		Boolean title = coverpage.ValidateCoverPageHelpButton();
+   		Assert.assertTrue(title,"Cover page help button is not working.");
+   		System.out.println("Cover page help button is working Fine");
+   	}
+    @Test(priority = 15)
+   	public void Cover_Page_Help_W_Close_Button_Test() throws Exception
+   	{
+   		Boolean title = coverpage.ValidateCoverPageWCloseButton();
+   		Assert.assertFalse(title,"Cover page help Window Close button is not working.");
+   		System.out.println("Cover page Help window Close button is working fine.");
+   	}
+    @AfterMethod
+	public void teardown(ITestResult result)
+	{
+		TestUtil testutil = new TestUtil();
+		testutil.ScreenShotOfFailedMenthod(result);
+	//wd.quit();	
+	}
 }

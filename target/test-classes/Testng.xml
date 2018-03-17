@@ -9,7 +9,7 @@
     <classes>
      <class name="Com.GeneoStudent.Testcases.CoverPageTest">
    		<methods>
-          <include name="Cover_Page_menu_Change_Password_Button_Test" />
+          <include name="Cover_Page_Help_W_Close_Button_Test" />
        </methods> 
       <!-- <class name="Com.GeneoStudent.Testcases.Index_Page_Test">
    		<methods>

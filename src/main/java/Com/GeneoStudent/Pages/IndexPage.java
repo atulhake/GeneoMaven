@@ -14,6 +14,9 @@ public class IndexPage {
 	By MenuMyProfileButton =  By.xpath("//a[contains(text(),'My Profile')]");
 	By MenuButtonn =  By.xpath("//img[@class='landing_user']");
 	By LockscreenButton = By.xpath("//a[contains(text(),'Lock Screen')]");
+	By LeftNevigationButton = By.xpath("//li[contains(@class,'left_nav')]");
+	By RightNevigationButton = By.xpath("//li[contains(@class,'right_nav')]");
+	By MenuGeneoButton = By.xpath("//a[contains(text(),'Geneo')]");
 
 	public IndexPage(WebDriver wd)
     {

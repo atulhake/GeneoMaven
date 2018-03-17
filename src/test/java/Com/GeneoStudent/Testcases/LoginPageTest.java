@@ -132,8 +132,7 @@ public class LoginPageTest extends TestBase
 	{
 		TestUtil testutil = new TestUtil();
 		testutil.ScreenShotOfFailedMenthod(result);
-		
-	//wd.quit();	
+	wd.quit();	
 	}
 	
 	
