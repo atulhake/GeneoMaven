@@ -21,7 +21,7 @@ public class CoverPage extends TestBase{
 	By MenuButtonn =  By.xpath("//img[@class='landing_user']");
 	By LockscreenButton = By.xpath("//a[contains(text(),'Lock Screen')]"); 
 	By Changepasswordbutton = By.xpath("//a[contains(text(),'Change Password')]"); 
-	By user_current_pwd = By.xpath("//*[@id='user_current_pwd']");
+	//By user_current_pwd = By.xpath("//*[@id='user_current_pwd']");
 	By MenuGeneoButton = By.xpath("//a[contains(text(),'Geneo')]");
 	By LeftNevigationButton = By.xpath("//img[contains(@src,'previous.png')]");
 	By RightNevigationButton = By.xpath("//img[contains(@src,'next.png')]"); 
@@ -29,8 +29,13 @@ public class CoverPage extends TestBase{
 	By HelpWindowCloseButton = By.xpath("//button[contains(@class,'close_corosal')]");
 	By HelpWindowLeftClickButton = By.xpath("//span[contains(@class,'glyphicon-chevron-left')]");	
 	By HelpWindowRightClickButton = By.xpath("//span[contains(@class,'glyphicon-chevron-right')]");
-	
-	
+	By ChangePasswordWSaveButton  =  By.xpath("//button[contains(@class,'Change_password_save')]");
+	By ChangePasswordWCancelButton = By.xpath("//button[contains(@class,'Change_password_cancel')]");
+	By UserCurrentPassword =  By.id("user_current_pwd");
+	By UserNewPassword =  By.id("user_new_pwd");
+	By UserConfirmPassword =  By.id("user_confirm_password");
+	By Alertmsg =  By.xpath("//*[@id='alertmsg']");
+	By AlertmsgOkButton = By.xpath("//*[@id='myModal_alertmessage']/div/div/div[3]/center/button");
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
 	
 	
@@ -123,7 +128,7 @@ public class CoverPage extends TestBase{
 		System.out.println("menu button got clicked");
 		wd.findElement(Changepasswordbutton).click();
 		Thread.sleep(2000);
-		boolean tt = wd.findElement(user_current_pwd).isEnabled();
+		boolean tt = wd.findElement(UserCurrentPassword).isDisplayed();
 		return tt;
 	}
 	public String ValidateCoverPageMenuGeneoButton() throws Exception
@@ -152,7 +157,7 @@ public class CoverPage extends TestBase{
 		Thread.sleep(2000);
 		wd.findElement(HelpButton).click();
 		System.out.println("Help button got clicked");
-		return wd.findElement(HelpWindowCloseButton).isEnabled();
+		return wd.findElement(HelpWindowCloseButton).isDisplayed();
 	}
 	public Boolean ValidateCoverPageWCloseButton() throws Exception
 	{
@@ -162,9 +167,10 @@ public class CoverPage extends TestBase{
 		Thread.sleep(2000);
 		wd.findElement(HelpWindowCloseButton).click();
 		//Thread.sleep(500);
-		return wd.findElement(HelpWindowCloseButton).isEnabled();
+		return wd.findElement(HelpWindowCloseButton).isDisplayed();
 
 	}
+//	implement this two method by storing which image will come after click on this button use src tag 
 //	//public Boolean ValidateCoverPageWLeftClickButton() throws Exception
 //	{
 //		Thread.sleep(2000);
@@ -182,11 +188,89 @@ public class CoverPage extends TestBase{
 //		
 //	}
 	
-	
-	
-	
-	
-	
+	public String ValidateCpCpSaveButton() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(MenuButtonn).click();
+		System.out.println("menu button got clicked");
+		wd.findElement(Changepasswordbutton).click();
+		wd.findElement(UserCurrentPassword).sendKeys("");
+		wd.findElement(UserNewPassword).sendKeys("");
+		wd.findElement(UserConfirmPassword).sendKeys("");
+		wd.findElement(ChangePasswordWSaveButton).click();
+		Thread.sleep(2000);
+		return wd.findElement(Alertmsg).getText();
+	}
+	public boolean ValidateCpCpCancelButton() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(MenuButtonn).click();
+		System.out.println("menu button got clicked");
+		wd.findElement(Changepasswordbutton).click();
+		Thread.sleep(2000);
+		wd.findElement(ChangePasswordWCancelButton).click();
+		Thread.sleep(2000);
+		return wd.findElement(ChangePasswordWCancelButton).isDisplayed();
+	}
+	public boolean ValidateCpCpAlertOKButton() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(MenuButtonn).click();
+		System.out.println("menu button got clicked");
+		wd.findElement(Changepasswordbutton).click();
+		wd.findElement(UserCurrentPassword).sendKeys("");
+		wd.findElement(ChangePasswordWSaveButton).click();
+		Thread.sleep(2000);
+		wd.findElement(AlertmsgOkButton).click();
+		Thread.sleep(2000);
+		return wd.findElement(AlertmsgOkButton).isDisplayed();
+	}
+	public String ValidateCpCpOnlyCurrentPassword() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(MenuButtonn).click();
+		System.out.println("menu button got clicked");
+		wd.findElement(Changepasswordbutton).click();
+		wd.findElement(UserCurrentPassword).sendKeys("vsscewjnee");
+		wd.findElement(ChangePasswordWSaveButton).click();
+		Thread.sleep(2000);
+		return wd.findElement(Alertmsg).getText();
+	}
+	public String ValidateCpCpOnlyNewPassword() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(MenuButtonn).click();
+		System.out.println("menu button got clicked");
+		wd.findElement(Changepasswordbutton).click();
+		wd.findElement(UserNewPassword).sendKeys("vsdvd");
+		wd.findElement(ChangePasswordWSaveButton).click();
+		Thread.sleep(2000);
+		return wd.findElement(Alertmsg).getText();
+	}
+	public String ValidateCpCpOnlyConfirmPassword() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(MenuButtonn).click();
+		System.out.println("menu button got clicked");
+		wd.findElement(Changepasswordbutton).click();
+		wd.findElement(UserConfirmPassword).sendKeys("vsdvd");
+		wd.findElement(ChangePasswordWSaveButton).click();
+		Thread.sleep(2000);
+		return wd.findElement(Alertmsg).getText();
+	}
+	public String ValidateCpCpIncorrectCurrentPassword() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(MenuButtonn).click();
+		System.out.println("menu button got clicked");
+		wd.findElement(Changepasswordbutton).click();
+		wd.findElement(UserCurrentPassword).sendKeys("Geneo");
+		wd.findElement(UserNewPassword).sendKeys("Geneo@1234");
+		wd.findElement(UserConfirmPassword).sendKeys("Geneo@1234");
+		wd.findElement(ChangePasswordWSaveButton).click();
+		Thread.sleep(2000);
+		return wd.findElement(Alertmsg).getText();
+	}
 	
 	
 	

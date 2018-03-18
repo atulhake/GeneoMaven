@@ -3,18 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="Com.GeneoStudent.Testcases.Index_Page_Test">
+      <class name="Com.GeneoStudent.Testcases.Cover_Page_Change_Password_Test">
         <methods>
-          <include name="Cover_Page_SignOut_PopUp_60_sec_AutoSignOut_Test2"/>
-          <include name="Index_Page_menu_My_profile_Button_Test"/>
+          <include name="Cover_Pg_Change_Password_Incorrect_Current_Password_Input_Test"/>
           <include name="setup"/>
-          <include name="Index_Page_Resume_Button_Test"/>
-          <include name="Index_Page_Chapter_Click_Test"/>
-          <include name="Index_Page_SignOut_Button_Test"/>
-          <include name="Index_Page_SignOut_PopUp_60_sec_AutoSignOut_Test1"/>
-          <include name="Index_Page_SignOut_PopUp_Cancel_Button_Test1"/>
         </methods>
-      </class> <!-- Com.GeneoStudent.Testcases.Index_Page_Test -->
+      </class> <!-- Com.GeneoStudent.Testcases.Cover_Page_Change_Password_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

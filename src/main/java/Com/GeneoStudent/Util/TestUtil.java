@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -29,8 +32,9 @@ public  class TestUtil extends TestBase{
 	
 	static Workbook book;
 	static Sheet sheet;
-	
-
+	DateFormat df = new SimpleDateFormat("ddMMYYHHmmss");
+	Date DateTime = new Date();
+	String ss=df.format(DateTime);
 
 	public static Object[][] getTestData(String sheetName) {
 		FileInputStream file = null;
@@ -76,7 +80,7 @@ public  void ScreenShotOfFailedMenthod(ITestResult result)
 			File source=ts.getScreenshotAs(OutputType.FILE);
 			// Copy files to specific location here it will save all screenshot in our project home directory and
 			// result.getName() will return name of test case so that screenshot name will be same
-			FileUtils.copyFile(source, new File("./screenshots_geneo/"+result.getName()+System.currentTimeMillis()+".png"));
+			FileUtils.copyFile(source, new File("./screenshots_geneo/"+result.getName()+ss+".png"));
 			System.out.println("Screenshot taken");
 			} 
 		catch (Exception e)
@@ -85,13 +89,14 @@ public  void ScreenShotOfFailedMenthod(ITestResult result)
 			}
 		}
 }
-
 public void getscreenshots(WebDriver wd ,String name)
 	{
 		try{
+			
+			
 			TakesScreenshot ts = (TakesScreenshot)wd;
 			File source =ts.getScreenshotAs(OutputType.FILE);
-		    FileUtils.copyFile(source, new File("./screenshots_geneo/"+result.getName()+System.currentTimeMillis()+".png"));
+		    FileUtils.copyFile(source, new File("./screenshots_geneo/"+result.getName()+ss+".png"));
 		   }
 		
 		catch(Exception e)

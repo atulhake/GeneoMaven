@@ -7,10 +7,10 @@
   
   <test name="Regression 1">
     <classes>
-     <class name="Com.GeneoStudent.Testcases.CoverPageTest">
-   		<methods>
+     <class name="Com.GeneoStudent.Testcases.Cover_Page_Change_Password_Test">
+   		<!-- <methods>
           <include name="Cover_Page_Help_W_Close_Button_Test" />
-       </methods> 
+       </methods>  -->
       <!-- <class name="Com.GeneoStudent.Testcases.Index_Page_Test">
    		<methods>
           <include name="Index_Page_menu_Lock_Screen_Button_Test" />
