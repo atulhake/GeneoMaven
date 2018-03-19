@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Default suite]]">
+  <test name="Default test(failed)(failed)">
     <classes>
       <class name="Com.GeneoStudent.Testcases.Cover_Page_Change_Password_Test">
         <methods>
@@ -9,10 +9,9 @@
           <include name="Cover_Pg_Change_Password_Blank_Input_Test"/>
           <include name="setup"/>
           <include name="Cover_Pg_Change_Password_Only_new_Password_Input_Test"/>
-          <include name="Cover_Pg_Change_Password_Only_Current_Password_Input_Test"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- Com.GeneoStudent.Testcases.Cover_Page_Change_Password_Test -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Default test(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Default suite]] -->

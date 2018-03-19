@@ -31,11 +31,13 @@ public class CoverPage extends TestBase{
 	By HelpWindowRightClickButton = By.xpath("//span[contains(@class,'glyphicon-chevron-right')]");
 	By ChangePasswordWSaveButton  =  By.xpath("//button[contains(@class,'Change_password_save')]");
 	By ChangePasswordWCancelButton = By.xpath("//button[contains(@class,'Change_password_cancel')]");
-	By UserCurrentPassword =  By.id("user_current_pwd");
+	By UserCurrentPassword =  By.id("user_current_pwd"); //*[@id="user_current_pwd"]
 	By UserNewPassword =  By.id("user_new_pwd");
 	By UserConfirmPassword =  By.id("user_confirm_password");
-	By Alertmsg =  By.xpath("//*[@id='alertmsg']");
+	By Alertmsg =  By.xpath("//*[@id='alert-msg']");  
+	By Alertmsg2 =  By.xpath("//*[@id='alertmsg']");
 	By AlertmsgOkButton = By.xpath("//*[@id='myModal_alertmessage']/div/div/div[3]/center/button");
+	//*[@id="myModal_alertmessage"]/div/div/div[3]/center/button
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
 	
 	
@@ -194,6 +196,7 @@ public class CoverPage extends TestBase{
 		wd.findElement(MenuButtonn).click();
 		System.out.println("menu button got clicked");
 		wd.findElement(Changepasswordbutton).click();
+		Thread.sleep(2000);
 		wd.findElement(UserCurrentPassword).sendKeys("");
 		wd.findElement(UserNewPassword).sendKeys("");
 		wd.findElement(UserConfirmPassword).sendKeys("");
@@ -230,6 +233,7 @@ public class CoverPage extends TestBase{
 		Thread.sleep(2000);
 		wd.findElement(MenuButtonn).click();
 		System.out.println("menu button got clicked");
+		Thread.sleep(2000);
 		wd.findElement(Changepasswordbutton).click();
 		wd.findElement(UserCurrentPassword).sendKeys("vsscewjnee");
 		wd.findElement(ChangePasswordWSaveButton).click();
@@ -241,6 +245,7 @@ public class CoverPage extends TestBase{
 		Thread.sleep(2000);
 		wd.findElement(MenuButtonn).click();
 		System.out.println("menu button got clicked");
+		Thread.sleep(2000);
 		wd.findElement(Changepasswordbutton).click();
 		wd.findElement(UserNewPassword).sendKeys("vsdvd");
 		wd.findElement(ChangePasswordWSaveButton).click();
@@ -252,6 +257,7 @@ public class CoverPage extends TestBase{
 		Thread.sleep(2000);
 		wd.findElement(MenuButtonn).click();
 		System.out.println("menu button got clicked");
+		Thread.sleep(2000);
 		wd.findElement(Changepasswordbutton).click();
 		wd.findElement(UserConfirmPassword).sendKeys("vsdvd");
 		wd.findElement(ChangePasswordWSaveButton).click();
@@ -263,15 +269,59 @@ public class CoverPage extends TestBase{
 		Thread.sleep(2000);
 		wd.findElement(MenuButtonn).click();
 		System.out.println("menu button got clicked");
+		Thread.sleep(2000);
 		wd.findElement(Changepasswordbutton).click();
 		wd.findElement(UserCurrentPassword).sendKeys("Geneo");
 		wd.findElement(UserNewPassword).sendKeys("Geneo@1234");
 		wd.findElement(UserConfirmPassword).sendKeys("Geneo@1234");
 		wd.findElement(ChangePasswordWSaveButton).click();
 		Thread.sleep(2000);
+		return wd.findElement(Alertmsg2).getText();
+	}
+	public String ValidateCpCpcPosoitiveTest() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(MenuButtonn).click();
+		System.out.println("menu button got clicked");
+		Thread.sleep(2000);
+		wd.findElement(Changepasswordbutton).click();
+		wd.findElement(UserCurrentPassword).sendKeys("Geneo@123");
+		wd.findElement(UserNewPassword).sendKeys("Geneo@1234");
+		wd.findElement(UserConfirmPassword).sendKeys("Geneo@1234");
+		wd.findElement(ChangePasswordWSaveButton).click();
+		Thread.sleep(2000);
+		String ss=wd.findElement(Alertmsg).getText();
+		Thread.sleep(2000);
+		wd.findElement(AlertmsgOkButton).click();
+		return ss;
+	}
+	public String RevertPassword() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(MenuButtonn).click();
+		System.out.println("menu button got clicked");
+		Thread.sleep(2000);
+		wd.findElement(Changepasswordbutton).click();
+		wd.findElement(UserCurrentPassword).sendKeys("Geneo@1234");
+		wd.findElement(UserNewPassword).sendKeys("Geneo@123");
+		wd.findElement(UserConfirmPassword).sendKeys("Geneo@123");
+		wd.findElement(ChangePasswordWSaveButton).click();
+		Thread.sleep(2000);
 		return wd.findElement(Alertmsg).getText();
 	}
-	
-	
+	public String ValidateCpCpcNewAndConfirmPassMismatchedTest() throws Exception
+	{
+		Thread.sleep(2000);
+		wd.findElement(MenuButtonn).click();
+		System.out.println("menu button got clicked");
+		Thread.sleep(2000);
+		wd.findElement(Changepasswordbutton).click();
+		wd.findElement(UserCurrentPassword).sendKeys("Geneo@123");
+		wd.findElement(UserNewPassword).sendKeys("Geneo@12");
+		wd.findElement(UserConfirmPassword).sendKeys("Geneo@1234");
+		wd.findElement(ChangePasswordWSaveButton).click();
+		Thread.sleep(2000);
+		return wd.findElement(Alertmsg).getText();
+	}
 	
 }

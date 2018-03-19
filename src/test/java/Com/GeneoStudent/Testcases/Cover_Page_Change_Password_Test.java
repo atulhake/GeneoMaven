@@ -76,7 +76,51 @@ public class Cover_Page_Change_Password_Test extends TestBase
 			Assert.assertEquals(ss, "This does not match your current password.","Cover page change Password Incorrect current password Test failed");
 			System.out.println("Cover page change Password Incorrect current password Test Passed");
 		}
+		@Test(priority=8)
+		public void  Cover_Pg_Change_Password_Positive_Test() throws Exception
+		{
+			String ss= coverpage.ValidateCpCpcPosoitiveTest();
+			Assert.assertEquals(ss, "Your password has been updated.","Cover page change Password Positive Test failed.");
+			System.out.println("Cover page change Password Positive Test Passed.");
+			String dd= coverpage.RevertPassword();
+			Assert.assertEquals(dd, "Your password has been updated.","Cover page change Password Revert password try failed please Change it manually failed.");
+			System.out.println("Password reverted successfully");
+		}
+		@Test(priority=9)
+		public void  Cover_Pg_Change_Password_New_OLD_Pass_Mismatch_Input_Test() throws Exception
+		{
+			String ss= coverpage.ValidateCpCpcNewAndConfirmPassMismatchedTest();
+			Assert.assertEquals(ss, "New password not matching with confirm password.","Cover page change Password New Old Mismatch password Test failed");
+			System.out.println("Cover page change Password New Old Mismatch password Test Passed.");
+		}
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		 @AfterMethod
+			public void teardown(ITestResult result)
+			{
+				TestUtil testutil = new TestUtil();
+				testutil.ScreenShotOfFailedMenthod(result);
+			//wd.quit();	
+			}
 		
 		
 		
