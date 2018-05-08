@@ -1,4 +1,7 @@
 package Com.GeneoStudent.Testcases;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 
@@ -30,10 +33,11 @@ public class LoginPageTest extends TestBase
 	}
 	 
 	@BeforeMethod
-	public void setUp()
+	public void setUp() throws Exception
 	{
 		initialization();
 		loginpage = new LoginPage(wd);
+		
 	}
 	
 	

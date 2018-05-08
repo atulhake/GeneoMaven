@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Regression 1</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Mar 19 20:07:05 IST 2018</td>
+<td>Started on:</td><td>Thu Mar 29 18:40:42 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>36 seconds (36088 ms)</td>
+<tr><td>Total time:</td><td>25 seconds (25968 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,16 +67,42 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Com.GeneoStudent.Testcases.Cover_Page_Change_Password_Test.Cover_Pg_Change_Password_New_OLD_Pass_Mismatch_Input_Test()'><b>Cover_Pg_Change_Password_New_OLD_Pass_Mismatch_Input_Test</b><br>Test class: Com.GeneoStudent.Testcases.Cover_Page_Change_Password_Test</td>
-<td></td>
+<td title='Com.GeneoStudent.Testcases.Cover_Page_Change_Password_Test.Cover_Pg_Change_Password_Blank_Input_Test()'><b>Cover_Pg_Change_Password_Blank_Input_Test</b><br>Test class: Com.GeneoStudent.Testcases.Cover_Page_Change_Password_Test</td>
+<td><div><pre>java.lang.AssertionError: Cover page change Password save button is not working expected [lease fill all the fields.] but found [Please fill all the fields.]
+	at Com.GeneoStudent.Testcases.Cover_Page_Change_Password_Test.Cover_Pg_Change_Password_Blank_Input_Test(Cover_Page_Change_Password_Test.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 15 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1623348027", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1623348027'><pre>java.lang.AssertionError: Cover page change Password save button is not working expected [lease fill all the fields.] but found [Please fill all the fields.]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:134)
+	at org.testng.Assert.assertEquals(Assert.java:115)
+	at org.testng.Assert.assertEquals(Assert.java:189)
+	at Com.GeneoStudent.Testcases.Cover_Page_Change_Password_Test.Cover_Pg_Change_Password_Blank_Input_Test(Cover_Page_Change_Password_Test.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
 <td>6</td>
 <td>Com.GeneoStudent.Testcases.Cover_Page_Change_Password_Test@553f17c</td></tr>
 </table><p>

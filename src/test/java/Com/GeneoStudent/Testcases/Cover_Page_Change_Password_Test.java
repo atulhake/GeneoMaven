@@ -5,6 +5,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
 import Com.GeneoStudent.Base.TestBase;
 import Com.GeneoStudent.Pages.CoverPage;
 import Com.GeneoStudent.Pages.LoginPage;
@@ -30,8 +34,16 @@ public class Cover_Page_Change_Password_Test extends TestBase
 	@Test(priority=1)
 	public void  Cover_Pg_Change_Password_Blank_Input_Test() throws Exception
 	{
+		ExtentTest logger;
+		ExtentReports reports = new ExtentReports("C:\\eclipse\\Geneo_maven\\Extentreports\\HTMLreport.html");
+		logger = reports.startTest("abc");
+		logger.log(LogStatus.INFO, "1");
+		logger.log(LogStatus.FAIL,"2");
+		reports.endTest(logger);
+		
+		
 		String ss= coverpage.ValidateCpCpSaveButton();
-		Assert.assertEquals(ss, "Please fill all the fields.","Cover page change Password save button is not working");
+		Assert.assertEquals(ss, "lease fill all the fields.","Cover page change Password save button is not working");
 		System.out.println("Cover page change Password save button is working fine & All field blank test pass");
 	}
 	@Test(priority=2)
@@ -93,22 +105,6 @@ public class Cover_Page_Change_Password_Test extends TestBase
 			Assert.assertEquals(ss, "New password not matching with confirm password.","Cover page change Password New Old Mismatch password Test failed");
 			System.out.println("Cover page change Password New Old Mismatch password Test Passed.");
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
